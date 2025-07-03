@@ -1,6 +1,7 @@
 extends Node
 
 # Hello world!
+# Lmao
 
 const SIZES = [
 	Vector2i(800, 600),
