@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://d28qeiluokndi"]
+
+[ext_resource type="Script" uid="uid://ki1oulxmh0n4" path="res://scripts/gui/gui_buttons_container.gd" id="1_wu84c"]
+[ext_resource type="Script" uid="uid://kiowfd87e8q" path="res://scripts/gui/ui_buttons/main_menu_test_gui_button.gd" id="2_bqqt6"]
+[ext_resource type="Script" uid="uid://c5y2utepaasrl" path="res://scripts/gui/ui_buttons/main_menu_play_gui_button.gd" id="3_wu84c"]
+[ext_resource type="Script" uid="uid://da6kiod01173s" path="res://scripts/gui/ui_buttons/main_menu_test2_gui_button.gd" id="4_wu84c"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 24.0
+offset_right = 458.0
+offset_bottom = 126.0
+theme_override_font_sizes/font_size = 128
+text = "epic"
+
+[node name="UIButtonsContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 213.0
+offset_right = 352.0
+offset_bottom = 335.0
+script = ExtResource("1_wu84c")
+active = true
+metadata/_custom_type_script = "uid://ki1oulxmh0n4"
+
+[node name="Play" type="Label" parent="UIButtonsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Play"
+script = ExtResource("3_wu84c")
+metadata/_custom_type_script = "uid://dp1g5y2n8q7yp"
+
+[node name="Test" type="Label" parent="UIButtonsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Test"
+script = ExtResource("2_bqqt6")
+metadata/_custom_type_script = "uid://dp1g5y2n8q7yp"
+
+[node name="Label" type="Label" parent="UIButtonsContainer/Test"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 7.0
+offset_right = 118.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="Test2" type="Label" parent="UIButtonsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Test2"
+script = ExtResource("4_wu84c")
+metadata/_custom_type_script = "uid://dp1g5y2n8q7yp"

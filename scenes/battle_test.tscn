@@ -1,0 +1,106 @@
+[gd_scene load_steps=13 format=3 uid="uid://dm7maq2wt0122"]
+
+[ext_resource type="Script" uid="uid://c3q0tsgwawtta" path="res://scripts/battle/battle_manager.gd" id="1_axugm"]
+[ext_resource type="Texture2D" uid="uid://cxjpdk356fcx0" path="res://assets/background.png" id="2_hrs6n"]
+[ext_resource type="Texture2D" uid="uid://ixwcyteileec" path="res://assets/enemy.png" id="3_auonh"]
+[ext_resource type="Script" uid="uid://te6lsresj752" path="res://scripts/battle/gui/combat_gui_controller.gd" id="3_hrs6n"]
+[ext_resource type="Texture2D" uid="uid://dljjjd8s5af7u" path="res://assets/purify_selected.png" id="4_cn4ts"]
+[ext_resource type="Texture2D" uid="uid://xt0rmj25h2u1" path="res://assets/purify.png" id="4_n0rhk"]
+[ext_resource type="Texture2D" uid="uid://dcnakii7n7e0j" path="res://assets/tag.png" id="5_0r34i"]
+[ext_resource type="Texture2D" uid="uid://dtnebepnvxkgb" path="res://assets/cleanse.png" id="6_n0rhk"]
+[ext_resource type="Texture2D" uid="uid://dxwwi4equ5kyr" path="res://assets/item.png" id="7_0x425"]
+[ext_resource type="Texture2D" uid="uid://bh5ydgsmbfxbd" path="res://assets/item_selected.png" id="7_xd8e0"]
+[ext_resource type="Texture2D" uid="uid://bbay05pr2rr4s" path="res://assets/cleanse_selected.png" id="9_ovcj0"]
+[ext_resource type="Texture2D" uid="uid://bxc8jislc15k6" path="res://assets/tag_selected.png" id="11_1qjet"]
+
+[node name="BattleTest" type="Node2D"]
+script = ExtResource("1_axugm")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(400, 300)
+scale = Vector2(4, 4)
+texture = ExtResource("2_hrs6n")
+
+[node name="Part1" type="Node2D" parent="."]
+script = ExtResource("3_hrs6n")
+purify_button_off = ExtResource("4_n0rhk")
+purify_button_on = ExtResource("4_cn4ts")
+item_button_off = ExtResource("7_0x425")
+item_button_on = ExtResource("7_xd8e0")
+cleanse_button_off = ExtResource("6_n0rhk")
+cleanse_button_on = ExtResource("9_ovcj0")
+tag_button_off = ExtResource("5_0r34i")
+tag_button_on = ExtResource("11_1qjet")
+
+[node name="Enemies" type="Node2D" parent="Part1"]
+
+[node name="TestEnemy" type="Sprite2D" parent="Part1/Enemies"]
+position = Vector2(390, 152)
+scale = Vector2(3, 3)
+texture = ExtResource("3_auonh")
+
+[node name="TextBoxBg" type="ColorRect" parent="Part1"]
+offset_left = 148.0
+offset_top = 444.0
+offset_right = 655.0
+offset_bottom = 585.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextBox" type="ColorRect" parent="Part1"]
+offset_left = 152.0
+offset_top = 448.0
+offset_right = 651.0
+offset_bottom = 581.0
+color = Color(0.149497, 0.0303429, 0.174641, 1)
+
+[node name="Label" type="Label" parent="Part1/TextBox"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 497.0
+offset_bottom = 130.0
+theme_override_font_sizes/font_size = 48
+text = "Here be dialogue"
+autowrap_mode = 3
+
+[node name="Buttons" type="Control" parent="Part1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Purify" type="TextureRect" parent="Part1/Buttons"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 429.0
+offset_right = 74.0
+offset_bottom = 469.0
+scale = Vector2(2, 2)
+texture = ExtResource("4_cn4ts")
+
+[node name="Item" type="TextureRect" parent="Part1/Buttons"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 513.0
+offset_right = 74.0
+offset_bottom = 553.0
+scale = Vector2(2, 2)
+texture = ExtResource("7_0x425")
+
+[node name="Cleanse" type="TextureRect" parent="Part1/Buttons"]
+layout_mode = 0
+offset_left = 662.0
+offset_top = 431.0
+offset_right = 728.0
+offset_bottom = 471.0
+scale = Vector2(2, 2)
+texture = ExtResource("6_n0rhk")
+
+[node name="Tag" type="TextureRect" parent="Part1/Buttons"]
+layout_mode = 0
+offset_left = 662.0
+offset_top = 515.0
+offset_right = 728.0
+offset_bottom = 555.0
+scale = Vector2(2, 2)
+texture = ExtResource("5_0r34i")
