@@ -1,5 +1,7 @@
 extends Node
 
+# Hello world!
+
 const SIZES = [
 	Vector2i(800, 600),
 	Vector2i(1024, 768)
